@@ -9,15 +9,15 @@ namespace RedPanda.TriggerSystem
 
         internal void TriggerLogic(string tag, TriggerType type)
         {
-            Debug.Log("test");
-
             foreach (TagAndEvent item in events)
             {
+                //Search for the trigger event.
                 if (tag != item.eventTag || item.triggerType == type)
                 {
                     continue;
                 }
 
+                //Triggers event
                 item.unityEvent?.Invoke();
             }
         }
