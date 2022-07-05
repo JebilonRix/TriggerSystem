@@ -20,8 +20,8 @@ namespace RedPanda.TriggerSystem
             //Makes the collider as trigger.
             col.isTrigger = true;
         }
-        private void OnTriggerEnter(Collider other) => ReverseTriggerLogic(other.gameObject.tag, TriggerType.OnExit);
-        private void OnTriggerExit(Collider other) => ReverseTriggerLogic(other.gameObject.tag, TriggerType.OnEnter);
+        private void OnTriggerEnter(Collider other) => TriggerLogic(other.gameObject.tag, TriggerType.OnEnter);
+        private void OnTriggerExit(Collider other) => TriggerLogic(other.gameObject.tag, TriggerType.OnExit);
         #endregion Unity Methods
     }
 }
